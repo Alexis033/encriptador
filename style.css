@@ -35,6 +35,7 @@ main {
   padding: 16px 16px 24px;
   display: flex;
   flex-direction: column;
+  gap: var(--gap);
 }
 
 .advise {
@@ -79,7 +80,7 @@ main {
   width: 100%;
   height: 230px;
   resize: none;
-  padding: 0.4em;
+  padding: 0.4em 1em 0.4em 0.4em;
 
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -89,6 +90,9 @@ main {
 
 .input-text:focus {
   outline: 2px solid #072b61;
+}
+.container-textarea {
+  position: relative;
 }
 
 .container-buttons {
@@ -133,7 +137,7 @@ main {
   font-size: 24px;
   align-self: flex-start;
 }
-/* button */
+/* buttons */
 button {
   cursor: pointer;
   border: 1px solid var(--dark-blue-300);
@@ -144,7 +148,7 @@ button {
 }
 
 button:active {
-  transform: scale(0.99, 0.99);
+  transform: scale(0.98, 0.98);
 }
 
 .button-primary {
@@ -165,6 +169,43 @@ button:active {
 .button-secondary:hover {
   background-color: var(--light-blue-200);
   color: var(--dark-blue-300);
+}
+
+.button-close {
+  display: grid;
+  background-color: transparent;
+  color: var(--dark-blue-500);
+  border: none;
+  border-radius: 5px;
+  width: min-content;
+  padding: 2px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.button-close:hover {
+  background-color: var(--light-blue-300);
+}
+
+.button-close::after {
+  content: "Borrar";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dark-blue-500);
+  color: var(--light-blue-100);
+  font-size: 16px;
+  padding: 8px 12px;
+  width: min-content;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.button-close:hover::after {
+  opacity: 1;
 }
 
 #button-copy {

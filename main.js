@@ -1,7 +1,9 @@
 const $form = document.querySelector("form");
+const $input = document.querySelector(".input-text");
 const $resultDefault = document.querySelector(".result-default");
 const $result = document.querySelector(".result-text");
 const $buttonCopy = document.querySelector("#button-copy");
+const $buttonClose = document.querySelector(".button-close");
 
 function encriptar(text) {
   text = text.toLowerCase();
@@ -58,10 +60,13 @@ function copyText() {
     })
     .catch(() => {});
 }
-
+function deleteText() {
+  $input.value = "";
+  $input.focus();
+  $buttonClose.classList.add("hiden");
+}
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const $input = document.querySelector(".input-text");
   const text = $input.value;
   let action = e.submitter.value;
   let result = "";
@@ -74,11 +79,9 @@ $form.addEventListener("submit", (e) => {
   } else if (action === "Encriptar") {
     const encryptedText = encriptar(text);
     result = encryptedText;
-    console.log(encryptedText);
   } else if (action === "Desencriptar") {
     const decryptedText = desencriptar(text);
     result = decryptedText;
-    console.log(decryptedText);
   }
   $resultDefault.classList.add("hiden");
   $buttonCopy.classList.remove("hiden");
@@ -87,3 +90,15 @@ $form.addEventListener("submit", (e) => {
 });
 
 $buttonCopy.addEventListener("click", copyText);
+
+$buttonClose.addEventListener("click", deleteText);
+
+$input.addEventListener("input", () => {
+  if ($input.value !== "") {
+    $buttonClose.classList.remove("hiden");
+    console.log($input.value);
+  } else {
+    $buttonClose.classList.add("hiden");
+    console.log("$input.value");
+  }
+});

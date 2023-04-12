@@ -13,7 +13,12 @@
       content="Aplicación para encriptar y desencriptar mensajes."
     />
     <meta property="og:image" content="Muñeco.svg" />
-    <meta property="og:url" content="" />
+    <meta
+      property="og:url"
+      content="https://alexis033.github.io/encriptador/"
+    />
+    <link rel="shortcut icon" href="lock-fill.svg" type="image/x-icon" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"
@@ -30,13 +35,29 @@
       <div class="container-main">
         <h1 class="title">TextLock</h1>
         <form action="" class="form">
-          <textarea
-            class="input-text"
-            name="message"
-            placeholder="Ingrese su texto aquí"
-            autofocus
-            aria-label="Ingrese su texto aquí"
-          ></textarea>
+          <div class="container-textarea">
+            <button class="button-close hiden" aria-label="Eliminar texto">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-x"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+            </button>
+            <textarea
+              class="input-text"
+              name="message"
+              placeholder="Ingrese su texto aquí"
+              autofocus
+              aria-label="Ingrese su texto aquí"
+            ></textarea>
+          </div>
           <div>
             <div class="advise">
               <img src="Vector.svg" alt="icono de alerta" />
