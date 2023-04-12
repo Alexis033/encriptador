@@ -4,7 +4,7 @@ Secret Text is an application that allows you to encrypt and decrypt text in a f
 
 ## Deployment
 
-The application is currently deployed at [ LINK ].
+The application is currently deployed [here](https://alexis033.github.io/encriptador/).
 
 ## Features
 
