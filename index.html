@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta property="og:title" content="Encriptador" />
+    <meta
+      property="og:description"
+      content="Aplicación para encriptar y desencriptar mensajes."
+    />
+    <meta property="og:image" content="Muñeco.svg" />
+    <meta property="og:url" content="" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/8bdf5a52d2.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>TextLock</title>
+  </head>
+  <body>
+    <main>
+      <div class="container-main">
+        <h1 class="title">TextLock</h1>
+        <form action="" class="form">
+          <textarea
+            class="input-text"
+            name="message"
+            placeholder="Ingrese su texto aquí"
+            autofocus
+            aria-label="Ingrese su texto aquí"
+          ></textarea>
+          <div>
+            <div class="advise">
+              <img src="Vector.svg" alt="icono de alerta" />
+              <p class="">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="container-buttons">
+              <button
+                class="button-primary"
+                type="submit"
+                aria-label="Encriptar"
+                value="Encriptar"
+              >
+                Encriptar
+              </button>
+              <button
+                class="button-secondary"
+                type="submit"
+                aria-label="Desencriptar"
+                value="Desencriptar"
+              >
+                Desencriptar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="result">
+        <div class="result-default">
+          <img
+            src="Muñeco.svg"
+            alt="Imagen de una persona mirando con una lupa"
+          />
+          <h2 class="subtitle">Ningún mensaje fue encontrado</h2>
+          <p class="result-default_text">
+            Ingresa el texto que deseas encriptar o desencriptar
+          </p>
+        </div>
+        <p class="result-text hiden"></p>
+        <button id="button-copy" class="button-secondary hiden" type="button">
+          Copiar
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        &copy;<time datatime="2023-1-1">2023</time> Made by
+        <a
+          href="https://alexis033.github.io/"
+          target="_blank"
+          title="portafolio Maikcol"
+          ><strong><em>Maikcol Guevara</em></strong></a
+        >
+      </p>
+      <ul>
+        <li>
+          <address>
+            <a
+              href="https://www.linkedin.com/in/maikcol-guevara/"
+              target="_blank"
+              title="linkedin"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </address>
+        </li>
+
+        <li>
+          <address>
+            <a
+              href="https://github.com/Alexis033"
+              target="_blank"
+              title="GitHub profile"
+              ><i class="fa-brands fa-square-github"></i
+            ></a>
+          </address>
+        </li>
+      </ul>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

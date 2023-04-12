@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+:root {
+  --dark-blue-100: #609ed4;
+  --dark-blue-200: #356ea9;
+  --dark-blue-300: #0a3871;
+  --dark-blue-400: #072b61;
+  --dark-blue-500: #052051;
+
+  --light-blue-100: #f3f5fc;
+  --light-blue-200: #eff1fa;
+  --light-blue-300: #e9ecf8;
+  --light-blue-400: #aab2d5;
+  --light-blue-500: #757fb2;
+
+  --gray-100: #ced4da;
+  --gray-200: #adb5bd;
+  --gray-300: #868e96;
+  --gray-400: #495057;
+  --gray-500: #343a40;
+
+  --gap: 40px;
+}
+
+body {
+  background-color: var(--light-blue-100);
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.advise {
+  margin: 16px 0;
+  display: flex;
+  gap: 0.3rem;
+  align-items: flex-start;
+
+  font-size: 12px;
+  color: var(--gray-400);
+}
+
+.title {
+  color: var(--dark-blue-300);
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--gray-500);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  width: 100%;
+}
+
+/* form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.input-text {
+  background-color: var(--light-blue-100);
+  border: none;
+  width: 100%;
+  height: 230px;
+  resize: none;
+  padding: 0.4em;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: var(--dark-blue-300);
+}
+
+.input-text:focus {
+  outline: 2px solid #072b61;
+}
+
+.container-buttons {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* result */
+.result {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  gap: 32px;
+
+  background-color: #fafafa;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+}
+
+.result-default {
+  text-align: center;
+  margin: auto;
+}
+.result-default h2 {
+  margin-bottom: 14px;
+  color: var(--gray-500);
+  font-size: 24px;
+}
+
+.result-default_text {
+  color: var(--gray-400);
+  font-size: 16px;
+}
+.result-text {
+  color: var(--gray-400);
+  font-size: 24px;
+  align-self: flex-start;
+}
+/* button */
+button {
+  cursor: pointer;
+  border: 1px solid var(--dark-blue-300);
+  border-radius: 24px;
+  padding: 24px;
+  width: 100%;
+  max-width: 328px;
+}
+
+button:active {
+  transform: scale(0.99, 0.99);
+}
+
+.button-primary {
+  background-color: var(--dark-blue-300);
+  color: var(--light-blue-100);
+}
+
+.button-primary:hover {
+  background-color: var(--dark-blue-400);
+  color: var(--light-blue-100);
+}
+
+.button-secondary {
+  background-color: var(--light-blue-100);
+  color: var(--dark-blue-300);
+}
+
+.button-secondary:hover {
+  background-color: var(--light-blue-200);
+  color: var(--dark-blue-300);
+}
+
+#button-copy {
+  position: relative;
+}
+#button-copy::after {
+  content: "Texto copiado";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--dark-blue-500);
+  color: var(--light-blue-100);
+  font-size: 16px;
+  padding: 8px 12px;
+  width: max-content;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+#button-copy.copied::after {
+  opacity: 1;
+}
+/* Footer */
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+
+  gap: 2em;
+
+  background-color: var(--dark-blue-300);
+  padding: 0.5rem 2rem;
+  color: var(--light-blue-200);
+}
+footer p {
+  grid-column: 1/3;
+  margin: auto 0;
+  justify-self: center;
+}
+footer p a {
+  font-size: 16px;
+}
+footer ul {
+  grid-column: 3/4;
+
+  display: flex;
+  gap: 0.6rem;
+
+  margin: auto 0;
+}
+
+footer a {
+  color: var(--light-blue-200);
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.hiden {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--gap);
+  }
+  .container-main {
+    max-width: 800px;
+  }
+  .form {
+    margin-left: 125px;
+  }
+  .result {
+    max-width: 400px;
+  }
+}
