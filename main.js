@@ -4,6 +4,7 @@ const $resultDefault = document.querySelector(".result-default");
 const $result = document.querySelector(".result-text");
 const $buttonCopy = document.querySelector("#button-copy");
 const $buttonClose = document.querySelector(".button-close");
+const $title = document.querySelector(".title");
 
 function encriptar(text) {
   text = text.toLowerCase();
@@ -63,7 +64,7 @@ function copyText() {
 function deleteText() {
   $input.value = "";
   $input.focus();
-  $buttonClose.classList.add("hiden");
+  $buttonClose.classList.add("hidden");
 }
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -72,9 +73,9 @@ $form.addEventListener("submit", (e) => {
   let result = "";
 
   if (text === "") {
-    $resultDefault.classList.remove("hiden");
-    $buttonCopy.classList.add("hiden");
-    $result.classList.add("hiden");
+    $resultDefault.classList.remove("hidden");
+    $buttonCopy.classList.add("hidden");
+    $result.classList.add("hidden");
     return;
   } else if (action === "Encriptar") {
     const encryptedText = encriptar(text);
@@ -83,9 +84,9 @@ $form.addEventListener("submit", (e) => {
     const decryptedText = desencriptar(text);
     result = decryptedText;
   }
-  $resultDefault.classList.add("hiden");
-  $buttonCopy.classList.remove("hiden");
-  $result.classList.remove("hiden");
+  $resultDefault.classList.add("hidden");
+  $buttonCopy.classList.remove("hidden");
+  $result.classList.remove("hidden");
   $result.innerHTML = result;
 });
 
@@ -95,10 +96,14 @@ $buttonClose.addEventListener("click", deleteText);
 
 $input.addEventListener("input", () => {
   if ($input.value !== "") {
-    $buttonClose.classList.remove("hiden");
-    console.log($input.value);
+    $buttonClose.classList.remove("hidden");
+    // console.log($input.value);
   } else {
-    $buttonClose.classList.add("hiden");
-    console.log("$input.value");
+    $buttonClose.classList.add("hidden");
+    // console.log("$input.value");
   }
+});
+
+$title.addEventListener("click", () => {
+  window.document.querySelector("body").classList.toggle("dark-mode");
 });
